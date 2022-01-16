@@ -147,4 +147,4 @@ class InstaBrute(object):
 
 
 
-CoibaseBrute()
+InstaBrute()
